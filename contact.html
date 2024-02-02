@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    @media only screen and (max-width: 1024px) {
+        .links {
+            display: none;
+        }
+        #menuicon {
+            display: inline-block;
+        }
+    }
+</style>
+
+<body>
+    <div class="textbar">
+        <p>Signup and GET 20% OFF for your first order.</p>
+        <button id="closeButton" class="text-white">&times;</button>
+    </div>
+    <div class="navbar">
+        <h1 style="font-weight: 600; font-size: 30px; padding: 0; margin: 0;">Nostra</h1>
+        <a id="menuicon"><i class="fa fa-bars"></i></a>
+        <div class="links">
+            <a href="/index.html">Home</a>
+            <a href="/index.html#newArrivals">New arrivals</a>
+            <a href="/index.html#mostwanted">Most wanted</a>
+            <a href="/products.html">Collections</a>
+            <a href="/contact.html">Contact Us</a>
+        </div>
+    </div>
+    <section id="sidenav"
+        style="width: 50%; height: 100vh; right: -50%; display: flex;flex-direction: column;gap: 1rem;align-items: center; background-color: aliceblue;position: fixed;z-index: 20; transition-property: all; transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);transition-duration: 150ms;">
+        <p id="closenav" style="margin: 20px 40px 20px 0px; width: 100%; display: inline-block; text-align: right; cursor: pointer;">X</p>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/index.html">Home</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/products.html">Collections</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/contact.html">Contact Us</a>
+    </section>
+
+    <div class="flex justify-center items-center w-screen h-screen bg-white mt-20 mb-20">
+        <div class="container mx-auto my-4 px-4 lg:px-20">
+
+            <div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mr-auto rounded-2xl shadow-2xl">
+                <div class="flex">
+                    <h1 class="font-bold uppercase text-5xl">Send us a <br /> message</h1>
+                </div>
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+                    <input
+                        class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        type="text" placeholder="First Name*" />
+                    <input
+                        class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        type="text" placeholder="Last Name*" />
+                    <input
+                        class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        type="email" placeholder="Email*" />
+                    <input
+                        class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        type="number" placeholder="Phone*" />
+                </div>
+                <div class="my-4">
+                    <textarea placeholder="Message*"
+                        class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+                <div class="my-2 w-1/2 lg:w-1/4">
+                    <button class="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
+                          focus:outline-none focus:shadow-outline">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <h1 style="font-weight: 600; font-size: 30px;">Nostra</h1>
+        <p>The Standard chunk of Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, neque.</p>
+        <p>&copy; 2021 Nostra.com</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textBar = document.querySelector('.textbar');
+            const closeButton = document.getElementById('closeButton');
+
+            // Show the text bar
+            textBar.classList.remove('hidden');
+
+            // Close the text bar when the close button is clicked
+            closeButton.addEventListener('click', function () {
+                textBar.style.display = 'none';
+            });
+            // newarrivals section navigation
+            document.querySelector('.links a[href="#newArrivals"]').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('newArrivals').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+            // mostwanted section navigation
+            document.querySelector('.links a[href="#mostwanted"]').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('mostwanted').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        var sidenav = document.getElementById("sidenav")
+        var menuicon = document.getElementById("menuicon")
+        var closenav = document.getElementById("closenav")
+        menuicon.addEventListener("click", function () {
+            sidenav.style.right = 0
+        })
+        closenav.addEventListener("click", function () {
+            sidenav.style.right = "-50%"
+        })
+    </script>
+</body>
+
+</html>

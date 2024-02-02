@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra frontend</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="textbar">
+        <p>Signup and GET 20% OFF for your first order.</p>
+        <button id="closeButton" class="text-white">&times;</button>
+    </div>
+    <div class="navbar">
+        <h1>Nostra</h1>
+        <a id="menuicon"><i class="fa fa-bars"></i></a>
+        <div class="links">
+            <a href="/index.html">Home</a>
+            <a href="#newArrivals">New arrivals</a>
+            <a href="#mostwanted">Most wanted</a>
+            <a href="/products.html">Collections</a>
+            <a href="/contact.html">Contact Us</a>
+        </div>
+    </div>
+    <section id="sidenav"
+        style="width: 50%; height: 100vh; right: -50%; display: flex;flex-direction: column;gap: 1rem; background-color: aliceblue;position: fixed;z-index: 20; transition-property: all; transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);transition-duration: 150ms;">
+        <p id="closenav" style="margin: 20px 40px 20px 0px; width: 100%; display: inline-block; text-align: right; cursor: pointer;">X</p>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/index.html">Home</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/products.html">Collections</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/contact.html">Contact Us</a>
+    </section>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="./images/bane1.jpg" alt="Image 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="./images/bane2.jpg" alt="Image 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="./images/bane3.jpg" alt="Image 3">
+        </div>
+        <section class="mySlides_text">
+            <h1>Level up your style with our</h1>
+            <h6>Summer Collections</h6>
+            <button>Shop Now</button>
+        </section>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next absolute top-1/2 right-0 transform -translate-y-1/2 px-4 py-2 bg-black text-white font-bold text-lg rounded-full cursor-pointer transition duration-500 hover:bg-opacity-80"
+            onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="brand-container">
+        <h2>Brands</h2>
+        <div class="logos">
+            <div class="logo">
+                <img src="./images/puma.png" alt="" class="w-16">
+                <p>Puma</p>
+            </div>
+            <div class="logo">
+                <img src="./images/adidas.png" alt="" class="w-16">
+                <p>Adidas</p>
+            </div>
+            <div class="logo">
+                <img src="./images/twitch.png" alt="" class="w-16">
+                <p>Twitch</p>
+            </div>
+            <div class="logo">
+                <img src="./images/two-leaves.png" alt="" class="w-16">
+                <p>Leaves</p>
+            </div>
+            <div class="logo">
+                <img src="./images/behance.png" alt="" class="w-16">
+                <p>Behance</p>
+            </div>
+            <div class="logo">
+                <img src="./images/puma.png" alt="" class="w-16">
+                <p>Puma</p>
+            </div>
+            <div class="logo">
+                <img src="./images/adidas.png" alt="" class="w-16">
+                <p>Adidas</p>
+            </div>
+        </div>
+    </div>
+    <div class="customers-head">
+        <h2 style="width: 260px">We Provide Best Customer Experiences</h2>
+        <p>|| We ensure that our customer have the best shopping experiences</p>
+    </div>
+    <div class="customers">
+        <div class="customers-cont">
+            <img src="./images/interface.png" alt="">
+            <h3 class="font-bold">Original Products</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, distinctio?</p>
+        </div>
+        <div class="customers-cont">
+            <img src="./images/happy.png" alt="">
+            <h3 class="font-bold">Original Products</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quia!</p>
+        </div>
+        <div class="customers-cont">
+            <img src="./images/paint-brush.png" alt="">
+            <h3 class="font-bold">Original Products</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, cupiditate.</p>
+        </div>
+        <div class="customers-cont">
+            <img src="./images/fast-delivery.png" alt="">
+            <h3 class="font-bold">Original Products</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, beatae?</p>
+        </div>
+    </div>
+    <div id="newArrivals" class="newarrivals">
+        <div>
+            <h2>New Arrivals</h2>
+        </div>
+        <div class="newarrivals-box">
+            <div class="newarrivals-cont">
+                <img src="./images/arr1.jpg" alt="Image 1">
+                <button>Shop Now</button>
+            </div>
+
+            <div class="newarrivals-cont">
+                <img src="./images/arr5.jpg" alt="Image 2">
+                <button>Shop Now</button>
+            </div>
+
+            <div class="newarrivals-cont">
+                <img src="./images/arr3.jpg" alt="Image 3">
+                <button>Shop Now</button>
+            </div>
+
+            <div class="newarrivals-cont">
+                <img src="./images/arr4.jpg" alt="Image 4">
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </div>
+    <div id="mostwanted" class="mostwanted">
+        <h2>Most Wanted</h2>
+        <div class="image-panel">
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/arr1.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/New folder/businessman-wearing-black-pants-with-white-shirt.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/New folder/hand-holding-light-brown-beige-pants.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/New folder/jeans (1).jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/New folder/jeans.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/arr2.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/arr3.jpg" alt="Sale Image">
+            </div>
+            <div class="mostwantedimage-container">
+                <div class="sale-textbox">SALE</div>
+                <div class="heart-icon">&#9825;</div>
+                <img src="./images/arr4.jpg" alt="Sale Image">
+            </div>
+        </div>
+
+    </div>
+    <section class="newsletter">
+        <h1>Join our New Letter</h1>
+        <p>Signup for our email newspaper to get exclusive discounts, updates, and more</p>
+        <input type="text">
+        <button>Subscribe</button>
+    </section>
+    <footer class="footer">
+        <h1>Nostra</h1>
+        <p>The Standard chunk of Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, neque.</p>
+        <p>&copy; 2021 Nostra.com</p>
+    </footer>
+
+    <script>
+        //textbar closing function
+        document.addEventListener('DOMContentLoaded', function () {
+            const textBar = document.querySelector('.textbar');
+            const mySlidestext = document.querySelector('.mySlides_text')
+            const closeButton = document.getElementById('closeButton');
+            textBar.classList.remove('hidden');
+            closeButton.addEventListener('click', function () {
+                textBar.style.display = 'none';
+                mySlidestext.style.top='43px';
+            });
+        });
+
+        //banner image section
+        let slideIndex = 1;
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        showSlides(slideIndex);
+
+        //horizontal scroll section  
+        const imagePanel = document.querySelector('.image-panel');
+        imagePanel.addEventListener('wheel', function (event) {
+            event.preventDefault();
+
+            if (event.deltaY > 0) {
+                imagePanel.scrollLeft += 10;
+            } else {
+                imagePanel.scrollLeft -= 10;
+            }
+        });
+
+        // newarrivals section navigation
+        document.querySelector('.links a[href="#newArrivals"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('newArrivals').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // mostwanted section navigation
+        document.querySelector('.links a[href="#mostwanted"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('mostwanted').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        var sidenav = document.getElementById("sidenav")
+        var menuicon = document.getElementById("menuicon")
+        var closenav = document.getElementById("closenav")
+        menuicon.addEventListener("click", function () {
+            sidenav.style.right = 0
+        })
+        closenav.addEventListener("click", function () {
+            sidenav.style.right = "-50%"
+        })
+    </script>
+</body>
+
+</html>

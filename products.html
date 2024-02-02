@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .links {
+                display: none;
+            }
+
+            #menuicon {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="textbar">
+        <p>Signup and GET 20% OFF for your first order.</p>
+        <button id="closeButton" class="text-white">&times;</button>
+    </div>
+    <div class="navbar">
+        <h1 style="font-weight: 600; font-size: 30px; padding: 0; margin: 0;">Nostra</h1>
+        <p id="menuicon" style="cursor: pointer;"><i class="fa fa-bars"></i></p>
+        <div class="links">
+            <a href="/index.html">Home</a>
+            <a href="/index.html#newArrivals">New arrivals</a>
+            <a href="/index.html#mostwanted">Most wanted</a>
+            <a href="/products.html">Collections</a>
+            <a href="/contact.html">Contact Us</a>
+        </div>
+    </div>
+    <section id="sidenav"
+        style="width: 50%; height: 100vh; right: -50%; display: flex;flex-direction: column;gap: 1rem;align-items: center; background-color: aliceblue;position: fixed;z-index: 20; transition-property: all; transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);transition-duration: 150ms;">
+        <p id="closenav" style="margin: 20px 40px 20px 0px; width: 100%; display: inline-block; text-align: right; cursor: pointer;">X</p>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/index.html">Home</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/products.html">Collections</a>
+        <a style="width: 100%; display: inline-block; text-align: center; text-decoration: none; color: black;" href="/contact.html">Contact Us</a>
+    </section>
+
+    <div class="w-full flex justify-center pt-20">
+        <input id="searchInput" class="border border-black mb-5 p-1 w-4/5" type="search"
+            placeholder="Search for a Product...">
+    </div>
+
+    <div class="container mx-auto flex mb-4">
+        <div id="filters" class="bg-white p-4 shadow-md w-48">
+            <div class="filter-section mb-8">
+                <h3 class="mb-4 text-lg font-semibold">Occasion</h3>
+                <div class="filter-options flex flex-col">
+                    <label class="mb-2">
+                        <input type="checkbox" id="casualCheckbox"> <span class="ml-2">Casual</span>
+                    </label>
+                    <label class="mb-2">
+                        <input type="checkbox" id="formalCheckbox"> <span class="ml-2">Formal</span>
+                    </label>
+                    <label class="mb-2">
+                        <input type="checkbox" id="partyCheckbox"> <span class="ml-2">Party</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter-section">
+                <h3 class="mb-4 text-lg font-semibold">Colors</h3>
+                <div class="filter-options flex flex-col">
+                    <label class="mb-2">
+                        <input type="checkbox" id="redCheckbox"> <span class="ml-2">Red</span>
+                    </label>
+                    <label class="mb-2">
+                        <input type="checkbox" id="blueCheckbox"> <span class="ml-2">Blue</span>
+                    </label>
+                    <label class="mb-2">
+                        <input type="checkbox" id="whiteCheckbox"> <span class="ml-2">White</span>
+                    </label>
+                    <label class="mb-2">
+                        <input type="checkbox" id="blackCheckbox"> <span class="ml-2">Black</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="productList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 mx-4"></div>
+    </div>
+
+    <footer class="footer">
+        <h1 style="font-weight: 600; font-size: 30px;">Nostra</h1>
+        <p>The Standard chunk of Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, neque.</p>
+        <p>&copy; 2021 Nostra.com</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textBar = document.querySelector('.textbar');
+            const closeButton = document.getElementById('closeButton');
+
+            // Show the text bar
+            textBar.classList.remove('hidden');
+
+            // Close the text bar when the close button is clicked
+            closeButton.addEventListener('click', function () {
+                textBar.style.display = 'none';
+            });
+        });
+                
+        var sidenav = document.getElementById("sidenav")
+        var menuicon = document.getElementById("menuicon")
+        var closenav = document.getElementById("closenav")
+        menuicon.addEventListener("click", function () {
+            sidenav.style.right = 0
+        })
+        closenav.addEventListener("click", function () {
+            sidenav.style.right = "-50%"
+        })
+
+        const products = [
+            { name: 'Blue TShirt', occasion: ['casual'], color: 'blue', price: '$39.99', image: './images/p1.jpg' },
+            { name: 'White Formal Shirt', occasion: ['formal'], color: 'white', price: '$29.99', image: './images/p2.jpg' },
+            { name: 'Party Top', occasion: ['party'], color: 'black', price: '$29.99', image: './images/p3.jpg' },
+            { name: 'Casual top', occasion: ['casual'], color: 'black', price: '$29.99', image: './images/p4.jpg' },
+            { name: 'Fancy Top', occasion: ['casual'], color: 'black', price: '$29.99', image: './images/p5.jpg' },
+            { name: 'Sweatshirt', occasion: ['formal'], color: 'red', price: '$29.99', image: './images/p6.jpg' },
+            { name: 'Formal Shirt combo', occasion: ['formal'], color: 'blue', price: '$29.99', image: './images/p7.jpg' },
+            { name: 'Mockp T-shirt', occasion: ['casual'], color: 'black', price: '$19.99', image: './images/arr1.jpg' },
+        ];
+
+        function filterProducts() {
+            const casualChecked = document.getElementById('casualCheckbox').checked;
+            const formalChecked = document.getElementById('formalCheckbox').checked;
+            const partyChecked = document.getElementById('partyCheckbox').checked;
+            const redChecked = document.getElementById('redCheckbox').checked;
+            const blueChecked = document.getElementById('blueCheckbox').checked;
+            const whiteChecked = document.getElementById('whiteCheckbox').checked;
+            const blackChecked = document.getElementById('blackCheckbox').checked;
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+            const filteredProducts = products.filter(product => {
+                const hasOccasion = (!casualChecked || (casualChecked && product.occasion.includes('casual'))) &&
+                    (!formalChecked || (formalChecked && product.occasion.includes('formal'))) &&
+                    (!partyChecked || (partyChecked && product.occasion.includes('party')));
+
+                const hasColor = (!redChecked || (redChecked && product.color === 'red')) &&
+                    (!blueChecked || (blueChecked && product.color === 'blue')) &&
+                    (!whiteChecked || (whiteChecked && product.color === 'white')) &&
+                    (!blackChecked || (blackChecked && product.color === 'black'));
+
+                const matchesSearch = product.name.toLowerCase().includes(searchInput);
+
+                return hasOccasion && hasColor && matchesSearch;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        function displayProducts(productsToDisplay) {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+
+            productsToDisplay.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card p-4 bg-white rounded shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="w-72 h-80 object-cover mb-4">
+                    <h3 class="text-lg font-semibold">${product.name}</h3>
+                    <p class="text-sm">${product.price}</p>
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+        displayProducts(products);
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterProducts);
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', filterProducts);
+
+        // newarrivals section navigation
+        document.querySelector('.links a[href="#newArrivals"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('newArrivals').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        // mostwanted section navigation
+        document.querySelector('.links a[href="#mostwanted"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('mostwanted').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
